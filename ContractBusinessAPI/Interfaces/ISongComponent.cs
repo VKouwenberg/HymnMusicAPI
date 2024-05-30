@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HymnModels.Models;
 
 namespace ContractBusinessAPI.Interfaces;
 
-public class ISongComponent
+public interface ISongComponent
 {
+	Task<byte[]> GetSongByName(string filename);
+	Task<List<String>> ListAllSongNames();
+	Task<List<String>> SearchSongsByName(string searchString);
 }

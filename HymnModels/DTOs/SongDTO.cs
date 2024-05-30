@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HymnModels.Models;
+namespace HymnModels.DTOs;
 
-public class Song
+public class SongDTO
 {
-	public string SongName {  get; set; }
+	public string SongName { get; set; }
 	public byte[] SongData { get; set; }
 }
