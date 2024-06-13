@@ -5,13 +5,15 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HymnModels", "HymnModels\HymnModels.csproj", "{BC1B0929-4724-4715-8EB3-13E72DAABF97}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HymnBusinessAPI", "HymnBusinessAPI\HymnBusinessAPI.csproj", "{4DE5583E-D6CA-43A9-9D9E-EF4C75104210}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HymnCoreAPI", "HymnBusinessAPI\HymnCoreAPI.csproj", "{4DE5583E-D6CA-43A9-9D9E-EF4C75104210}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HymnBusiness", "HymnBusiness\HymnBusiness.csproj", "{B9B8773A-2557-4D93-881E-F886E735C4AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HymnBusiness", "HymnBusiness\HymnBusiness.csproj", "{B9B8773A-2557-4D93-881E-F886E735C4AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractDataBusiness", "ContractDataBusiness\ContractDataBusiness.csproj", "{92E5EF2A-D4BE-492C-A782-0840BA34D31B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractDataBusiness", "ContractDataBusiness\ContractDataBusiness.csproj", "{92E5EF2A-D4BE-492C-A782-0840BA34D31B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractBusinessAPI", "ContractBusinessAPI\ContractBusinessAPI.csproj", "{3130B384-57FD-42D0-83BC-9972AC9BD036}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractBusinessAPI", "ContractBusinessAPI\ContractBusinessAPI.csproj", "{3130B384-57FD-42D0-83BC-9972AC9BD036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HymnData", "HymnData\HymnData.csproj", "{B1184FDF-63A0-4023-9758-0FB021617106}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3130B384-57FD-42D0-83BC-9972AC9BD036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3130B384-57FD-42D0-83BC-9972AC9BD036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3130B384-57FD-42D0-83BC-9972AC9BD036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1184FDF-63A0-4023-9758-0FB021617106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1184FDF-63A0-4023-9758-0FB021617106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1184FDF-63A0-4023-9758-0FB021617106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1184FDF-63A0-4023-9758-0FB021617106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

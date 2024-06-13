@@ -12,7 +12,7 @@ namespace HymnBusiness.Components;
 
 public class SongComponent : ISongComponent
 {
-	private readonly ISongRepo _songRepo;
+	private readonly ISongRepository _songRepo;
 
 	public async Task<byte[]> GetSongByName(string filename)
 	{
