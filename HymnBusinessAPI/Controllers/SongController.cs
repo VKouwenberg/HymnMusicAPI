@@ -53,7 +53,7 @@ public class SongController : Controller
 		return File(songBytes, contentType, filename);
 	}
 
-	[HttpGet("list")]
+	[HttpGet("ListAllSongNames")]
 	public async Task<IActionResult> ListAllSongNames()
 	{
 		_logger.LogInformation("Attempting to retrieve list of all song names");
@@ -61,8 +61,8 @@ public class SongController : Controller
 		return Ok(songNames);
 	}
 
-	[HttpGet("search")]
-	public async Task<IActionResult> SearchSongsByName([FromQuery] string searchString)
+	[HttpGet("SearchSongsByName")]
+	public async Task<IActionResult> SearchSongsByName([FromQuery] string? searchString)
 	{
 		_logger.LogInformation("Searching for songs with query: {SearchString}", searchString);
 		List<string> songNames = await _songComponent.SearchSongsByName(searchString);

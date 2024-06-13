@@ -44,10 +44,17 @@ public class SongRepository : ISongRepository
 
 	public async Task<List<string>> SearchSongsByName(string searchString)
 	{
+		if (string.IsNullOrEmpty(searchString))
+		{
+			return await ListAllSongNames();
+		}
+
 		return await Task.Run(() => Directory.GetFiles(_musicDirectory)
 			.Where(f => _allowedExtensions.Contains(Path.GetExtension(f).ToLower()) &&
 						Path.GetFileName(f).IndexOf(searchString, System.StringComparison.OrdinalIgnoreCase) >= 0)
 			.Select(f => Path.GetFileName(f))
 			.ToList());
 	}
+
+
 }
