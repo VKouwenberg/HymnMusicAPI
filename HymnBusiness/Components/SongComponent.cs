@@ -12,30 +12,24 @@ namespace HymnBusiness.Components;
 
 public class SongComponent : ISongComponent
 {
-	private readonly ISongRepository _songRepo;
+	private readonly ISongRepository _songRepository;
 
-	public async Task<byte[]> GetSongByName(string filename)
+	public SongComponent(ISongRepository songRepository)
 	{
-		if (string.IsNullOrEmpty(filename))
-		{
-			throw new ArgumentException("Filename cannot be null or empty", nameof(filename));
-		}
-
-		return await _songRepo.GetSongByName(filename);
+		_songRepository = songRepository;
+	}
+	public async Task<byte[]> GetSongByName(string fileName)
+	{
+		return await _songRepository.GetSongByName(fileName);
 	}
 
 	public async Task<List<string>> ListAllSongNames()
 	{
-		return await _songRepo.ListAllSongNames();
+		return await _songRepository.ListAllSongNames();
 	}
 
 	public async Task<List<string>> SearchSongsByName(string searchString)
 	{
-		if (string.IsNullOrEmpty(searchString))
-		{
-			throw new ArgumentException("Search string cannot be null or empty", nameof(searchString));
-		}
-
-		return await _songRepo.SearchSongsByName(searchString);
+		return await _songRepository.SearchSongsByName(searchString);
 	}
 }

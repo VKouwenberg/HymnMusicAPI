@@ -34,7 +34,23 @@ public class SongController : Controller
 			return NotFound();
 		}
 
-		return File(songBytes, "audio/mpeg"); // Adjust the content type according to your file type
+		string contentType = "application/octet-stream";
+		string fileExtension = Path.GetExtension(filename).ToLower();
+
+		switch (fileExtension)
+		{
+			case ".mp3":
+				contentType = "audio/mpeg";
+				break;
+			case ".flac":
+				contentType = "audio/flac";
+				break;
+			case ".wav":
+				contentType = "audio/wav";
+				break;
+		}
+
+		return File(songBytes, contentType, filename);
 	}
 
 	[HttpGet("list")]

@@ -1,6 +1,7 @@
 using ContractBusinessAPI.Interfaces;
 using ContractDataBusiness.Interfaces;
 using HymnBusiness.Components;
+using HymnData.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ISongComponent, SongComponent>();
+builder.Services.AddScoped<ISongRepository, SongRepository>();
 
 var app = builder.Build();
 
