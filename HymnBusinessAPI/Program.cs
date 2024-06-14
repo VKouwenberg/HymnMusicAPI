@@ -13,10 +13,27 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add CORS services
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(builder =>
+	{
+		builder.WithOrigins("http://localhost:3000") // Adjust as per your frontend URL
+			   .AllowAnyHeader()
+			   .AllowAnyMethod();
+	});
+});
+
 builder.Services.AddScoped<ISongComponent, SongComponent>();
 builder.Services.AddScoped<ISongRepository, SongRepository>();
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+	app.UseCors(); // Apply CORS policies globally in development
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,6 +43,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+// Use CORS middleware
+app.UseCors();
 
 app.UseAuthorization();
 

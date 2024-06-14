@@ -53,7 +53,7 @@ public class SongController : Controller
 		return File(songBytes, contentType, filename);
 	}
 
-	[HttpGet("ListAllSongNames")]
+	[HttpGet("list")]
 	public async Task<IActionResult> ListAllSongNames()
 	{
 		_logger.LogInformation("Attempting to retrieve list of all song names");
