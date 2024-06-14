@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore HymnMusicAPI.sln
+      run: dotnet restore HymnCoreAPI.sln
     - name: Build
-      run: dotnet build HymnMusicAPI.sln --no-restore
+      run: dotnet build HymnCoreAPI.sln --no-restore
     - name: Test
-      run: dotnet test HymnMusicAPI.sln --no-build --verbosity normal
+      run: dotnet test HymnCoreAPI.sln --no-build --verbosity normal
