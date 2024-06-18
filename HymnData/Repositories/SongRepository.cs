@@ -38,9 +38,10 @@ public class SongRepository : ISongRepository
 	{
 		return await Task.Run(() => Directory.GetFiles(_musicDirectory)
 			.Where(f => _allowedExtensions.Contains(Path.GetExtension(f).ToLower()))
-			.Select(f => Path.GetFileName(f))
+			.Select(f => Path.GetFileNameWithoutExtension(f))
 			.ToList());
 	}
+
 
 	public async Task<List<string>> SearchSongsByName(string searchString)
 	{
