@@ -9,9 +9,22 @@ namespace HymnData.Repositories;
 
 public class SongRepository : ISongRepository
 {
-	private readonly string _musicDirectory = "C:/Fontys ICT/Semester 3/IPS Individueel Project/Music/";
-
+	private readonly string _musicDirectory;
 	private readonly string[] _allowedExtensions = { ".mp3", ".flac", ".wav" };
+
+
+	public SongRepository()
+	{
+		// Check if the application is running inside a Docker container
+		if (Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true")
+		{
+			_musicDirectory = Environment.GetEnvironmentVariable("MUSIC_DIRECTORY") ?? "/app/Music";
+		}
+		else
+		{
+			_musicDirectory = "C:/Fontys ICT/Semester 3/IPS Individueel Project/Music/";
+		}
+	}
 
 	public async Task<byte[]> GetSongByName(string fileName)
 	{
